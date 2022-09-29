@@ -1,5 +1,5 @@
 <html>
-	<!-- <meta http-equiv="refresh" content="2"> -->
+	<!--<meta http-equiv="refresh" content="2"> -->
 	
 	<style>
 		#p1 {
@@ -12,23 +12,36 @@
 
 	<body>
 
-	<p id="p1">Number</p>
+	<p id="p1">Good Luck!</p>
 	
 	<script>
-		var i = Math.floor(Math.random() * (10 - 1) +1);
-		document.getElementById("p1").innerHTML = i;
+    var intervalId = window.setInterval(function(){
+  		var i = Math.floor(Math.random() * (10 - 1) +1);
+			document.getElementById("p1").innerHTML = i;
+  	}, 1000);
+    
+    function match(number){
+    	var value1 = document.getElementById("p1").textContent;
+  		if (value1 == number){
+        alert("Correct!")
+      	document.body.style.background = "green";
+      }
+    }
+    
 	</script>
+	<div id="buttons">
+    <input id="1" type="button" value="1" onclick="match(1)" />
+    <input id="2" type="button" value="2" onclick="match(2)" />
+    <input id="3" type="button" value="3" onclick="match(3)" />
+    <input id="4" type="button" value="4" />
+    <input id="5" type="button" value="5" />
+    <input id="6" type="button" value="6" />
+    <input id="7" type="button" value="7" />
+    <input id="8" type="button" value="8" />
+    <input id="9" type="button" value="9" />
+    <input id="10" type="button" value="10" />
+  </div>
 	
-	<input id="1" type="button" value="1" />
-	<input id="2" type="button" value="2" />
-	<input id="3" type="button" value="3" />
-	<input id="4" type="button" value="4" />
-	<input id="5" type="button" value="5" />
-	<input id="6" type="button" value="6" />
-	<input id="7" type="button" value="7" />
-	<input id="8" type="button" value="8" />
-	<input id="9" type="button" value="9" />
-	<input id="10" type="button" value="10" />
 
 	</body>
 </html>

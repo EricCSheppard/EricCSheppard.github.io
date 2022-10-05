@@ -17,18 +17,22 @@
 	<script>
 		var maxNumber = 10;
     		var intervalId = window.setInterval(function(){
-  			var i = Math.floor(Math.random() * (maxNumber) +1);
+  			var i = Math.floor(Math.random() * maxNumber +1);
 			document.getElementById("p1").innerHTML = i;
 	    		document.body.style.background = "white"
   		}, 1000);
     
-		    function match(number){
+		function match(number){
 			var value1 = document.getElementById("p1").textContent;
 			if (value1 == number){
 				document.body.style.background = "green";
 		     	}
-		    }
-    
+		 }
+		var htmlString = "";
+    		for (let i = 0; i < maxNumber; i++) {
+			htmlString = htmlString.concat("b");
+		}
+		document.getElementById("buttons").innerHTML = htmlString;
 	</script>
 	<div id="buttons">
     <input id="1" type="button" value="1" onclick="match(1)" />

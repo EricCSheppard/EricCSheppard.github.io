@@ -13,9 +13,13 @@
 	<body>
 
 	<p id="p1">Good Luck!</p>
+  
+  <div id="buttons">
+    <input id="1" type="button" value="1" onclick="match(1)" />
+  </div>
 	
 	<script>
-		var maxNumber = 10;
+		var maxNumber = 1000;
     		var intervalId = window.setInterval(function(){
   			var i = Math.floor(Math.random() * maxNumber +1);
 			document.getElementById("p1").innerHTML = i;
@@ -28,15 +32,13 @@
 				document.body.style.background = "green";
 		     	}
 		 }
-		var htmlString = "";
-    		for (let i = 0; i < maxNumber; i++) {
-			htmlString = htmlString.concat("b");
-		}
+		var htmlString = ""; 
+    for (let i = 1; i < (maxNumber + 1); i++) {
+          htmlString = htmlString.concat("<input id='" + i + "' type='button' value='" + i + "' onclick='match(" +i + ")' /> ");
+        }
 		document.getElementById("buttons").innerHTML = htmlString;
 	</script>
-	<div id="buttons">
-    <input id="1" type="button" value="1" onclick="match(1)" />
-  </div>
+
 	
 
 	</body>
